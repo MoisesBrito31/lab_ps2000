@@ -1,0 +1,114 @@
+
+<Gerenciador>:
+    Menu:
+        name: 'menu'
+    Livre:
+        name: 'livre'
+    Configurar:
+        name: 'configurar'
+    Testar:
+        name: 'testar'
+    Construtor:
+        name: 'construtor'
+
+<Menu>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            padding: 100,100,100,0
+            Button:
+                text: 'Livre'
+                on_press: 
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'livre'
+            Button:
+                text: 'Configurar'
+                on_press: 
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'configurar'
+        BoxLayout:
+            orientation: 'horizontal'
+            padding: 100,0,100,100
+            Button:
+                text: 'Testar'
+                on_press: 
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'testar'
+            Button:
+                disabled: True
+                text: 'Construtor'
+                on_press: 
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'construtor'
+        Rodape:
+
+<Livre>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Livre'
+        Button:
+            text: 'Voltar'
+            on_press: 
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'
+
+<Configurar>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Configurar'
+        Button:
+            text: 'Voltar'
+            on_press: 
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'
+
+<Testar>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Testar'
+        Button:
+            text: 'Voltar'
+            on_press: 
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'
+
+<Construtor>:    
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Construtor'
+        Button:
+            text: 'Voltar'
+            on_press: 
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'
+
+<Rodape>:
+    size_hint_y: None
+    height: '40dp'
+    padding: '5dp'
+    spacing: '5dp'
+    BoxLayout:
+        orientation: 'horizontal'
+        Label:
+            color: 1,0,0,1
+            text: 'Pusher Offline'
+        TextInput:
+            id: porta
+            size_hint_x: 0.5
+            multiline: False
+            text: 'COM1'
+        TextInput:
+            id: baundrate
+            numeric: True
+            size_hint_x: 0.5
+            multiline: False
+            text: '9600'
+        Button:
+            text: 'Conectar'
+            on_press: 
+                root.conectar()

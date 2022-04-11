@@ -1,0 +1,8 @@
+venv
+deploy
+
+*.pyc
+*.pyo
+*.exe
+*.dll
+*.apk
